@@ -2,15 +2,13 @@
 
 Validation of NASA's PACE/HARP2 satellite polarimeter against the airborne AirHARP2 instrument, using coincident measurements collected during the PACE Postlaunch Airborne eXperiment (PACE-PAX) campaign on September 26, 2024.
 
-Completed as part of the **NSF REU EXPLORE** program, under the mentorship of **Dr. McBride**, using instrument data from **ESI** (developers of HARP2 and AirHARP2).
-
 ## Motivation
 
 HARP2, flying on NASA's PACE satellite, measures polarized reflectance (radiance, DoLP) across multiple viewing angles and spectral bands to study aerosols and clouds. AirHARP2 is its airborne counterpart, flown on the ER-2 aircraft during PACE-PAX to provide higher-resolution, near-coincident validation data. This project checks how well the two instruments agree — first visually (mapped DoLP), then quantitatively (per-pixel angular curves), and finally after correcting for their very different spatial resolutions (via spatial averaging of AirHARP2 into HARP2-sized "superpixels").
 
 ## Workflow
 
-Notebooks are organized in the order they were developed and are meant to be run in this sequence:
+Notebooks in the order they were developed:
 
 1. **`PACE_926.ipynb`** — Downloads and reads a HARP2 L1C granule over the campaign's target site (via `earthaccess` + `nasa-pace-data-reader`). Locates the pixel nearest the site, plots per-pixel radiometric/polarimetric variables vs. view and scattering angle, and maps Degree of Linear Polarization (DoLP) by band (Blue/Green/Red/NIR) in two zoom levels.
 
@@ -27,15 +25,9 @@ Notebooks are organized in the order they were developed and are meant to be run
 - **HARP2 (PACE):** `PACE_HARP2.20240926T203011.L1C.V3.5km.nc`, downloaded via `earthaccess` from NASA Earthdata.
 - **AirHARP2 (ER-2):** `PACEPAX-AH2MAP-L1C_ER2_20240926T202945_R0.nc` and `..._20240926T203445_R0.nc`, ER-2 airborne passes near-coincident with the HARP2 overpass.
 
+## NOTE: AirHARP2 20:29 file and HARP2 file still being uploaded to this repo (in progress).
+
 Both instruments report intensity (i), Stokes parameters (q, u), and DoLP across multiple view angles per spectral band. Data access requires a NASA Earthdata login for `earthaccess`; the AirHARP2 files are PACE-PAX campaign products.
-
-## Setup
-
-```bash
-pip install earthaccess nasa-pace-data-reader cartopy h5py xarray scipy matplotlib numpy
-```
-
-An Earthdata account (for `earthaccess.login()`) is required to pull the HARP2 granule. AirHARP2 files are expected locally under `ER2/`.
 
 ## Key Results
 
@@ -58,4 +50,4 @@ An Earthdata account (for `earthaccess.login()`) is required to pull the HARP2 g
 
 ## Acknowledgments
 
-This work was conducted as part of the **NSF REU EXPLORE** program, under the mentorship of **Dr. McBride**. HARP2 and AirHARP2 instruments and data products are developed by **ESI**, in support of NASA's PACE mission and the PACE-PAX airborne validation campaign.
+This work was conducted as part of the **NSF REU EXPLORE** program hosted at the **University of Maryland Baltimore County**, under the mentorship of **Dr. Brent McBride**. 
