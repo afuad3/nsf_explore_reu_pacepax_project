@@ -23,9 +23,8 @@ Notebooks in the order they were developed:
 ## Data
 
 - **HARP2 (PACE):** `PACE_HARP2.20240926T203011.L1C.V3.5km.nc`, downloaded via `earthaccess` from NASA Earthdata.
-- **AirHARP2 (ER-2):** `PACEPAX-AH2MAP-L1C_ER2_20240926T202945_R0.nc` and `..._20240926T203445_R0.nc`, ER-2 airborne passes near-coincident with the HARP2 overpass.
+- **AirHARP2 (ER-2):** `PACEPAX-AH2MAP-L1C_ER2_20240926T202945_R0.nc` and `PACEPAX-AH2MAP-L1C_ER2_20240926T203445_R0.nc`, ER-2 airborne passes near-coincident with the HARP2 overpass.
 
-## NOTE: AirHARP2 20:29 file and HARP2 file still being uploaded to this repo (in progress).
 
 Both instruments report intensity (i), Stokes parameters (q, u), and DoLP across multiple view angles per spectral band. Data access requires a NASA Earthdata login for `earthaccess`; the AirHARP2 files are PACE-PAX campaign products.
 
